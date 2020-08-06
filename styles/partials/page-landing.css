@@ -1,0 +1,173 @@
+/*@import "https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap";*/
+
+/*body has id=page-landing*/
+
+
+#page-landing {
+   background-color: var(--color-primary) ;
+}
+
+
+#page-landing #container {
+
+    color:var(--color-text-in-primary);
+}
+
+.logo-container {
+
+    text-align:center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2 {
+
+   font-weight: 500;
+   font-size: 3.6rem;
+   line-height: 4.6rem;
+   margin-top: 0.8rem;
+
+}
+
+
+.logo-container img { 
+
+    height: 10rem; /*Adjusting img size*/
+}
+
+#container .hero-image { 
+
+    width:100%; /*container has widht 90vw* Images adapts perfectly when we diminsh or enlarge the screen*/
+
+}
+
+.buttons-container {
+
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+
+.buttons-container a {
+
+    width: 19rem;
+    height:7.4rem;
+    border-radius: 0.8rem;
+    margin-right:1.6rem;
+    font-family: 700 2.4rem Archivo;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color:var(--color-button-text);
+    transition: background 0.2s;
+}
+
+.buttons-container a.study {
+
+    background:var(--color-primary-lighter);
+   
+}
+
+
+.buttons-container a.study:hover {
+
+    background:var(--color-primary-light);
+}
+
+
+.buttons-container a.teach {
+
+    background:var(--color-secondary);
+    margin:0;
+}
+
+.buttons-container a.teach:hover {
+
+    background:var(--color-secondary-dark);
+    
+}
+
+.buttons-container a img {
+
+    width: 4rem;
+    margin-right: 2rem;
+}
+
+
+.total-connections { 
+
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
+.total-connections img {
+
+    margin-left: 0.8rem; 
+}
+
+
+
+@media (max-width:699px) { /*Until 699px apply this font-size*/
+
+    :root {
+
+        font-size: 40%; /*We want to modify Fs (rem size) , so fonts will be smaller... better for mobile devices*/
+    }
+}
+
+
+/*Rule to make landing page adjust when screen is bigger than 1100px;*/
+@media (min-width: 1100px) { /*Container has widht 700px. Here if device display is bigger than 1100px , then set #page-landing #container to 1100px*/
+    #page-landing #container  {
+        max-width: 1100px; /*This makes the container to adjust within the screen without breaking the layout*/
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;/* we can user fractions or  percentage or make it fixes in pixels*/
+        grid-template-rows: 350px 1fr; /* Make rows  - 1st row 350px and the bottom row apply what is left "1fr"*/
+        grid-template-areas: 
+        "proffy image image"
+        "button button texting";
+        column-gap: 87px;
+        row-gap: 86px;
+
+    }    
+
+    .logo-container {
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center; /* Makes all its content to aligh CENTER*/
+        margin:0px; 
+        
+
+    }
+
+    .logo-container img {
+        height: 127px;
+        
+
+}
+
+    .hero-image {
+
+        grid-area: image;
+        height: 350px;
+    }
+
+    .buttons-container {
+        grid-area: button;
+        justify-content: flex-start; /* when screen is bigger buttons will not be justify center anymore*/
+        margin:0;
+
+    }
+
+    .total-connections {
+
+        grid-area: texting; 
+        font-size: 1.2rem;
+        justify-self: end;
+
+    }
+}
+

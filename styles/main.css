@@ -1,0 +1,90 @@
+
+/*@import "https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap";*/
+
+:root {
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842c2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+
+    /* tamanho da fonte padrao : 16px - 100% 1 rem(unidade de medida relativo a fonte que foi setada na root- re(root element) */
+
+    font-size:60%; /* Controle das medidas rem*  - O padrao sera 60% pq iremos aplicar um conceito de
+      responsividade Mobile 1st* - % e REM sao unidades flexiveis*/
+
+}
+
+* {
+
+    margin: 0;
+    padding:0;
+    box-sizing: border-box; /* Box Model - conceito de caixas* O body pode ser uma caixa* h1 , p pode ser caixa*/
+    /* O box-sizing: border-box vai pegar o valor de padding e width e se virar para deixar tudo dentro da border*/
+    /**Ele vai somar a partir da border*/
+
+}
+
+html,
+body { 
+
+    height: 100vh;
+
+} /* A good practice is to place viewport height like this (html, body)*/
+
+
+body {
+
+    background-color:var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Font style Elements below are grouped for a reason. If we put them in the body only, the buttons (Estudar e Dar Aulas) dont not take effect */
+
+body,
+input,
+button,
+textarea {
+    /*font: 500 1.6rem Poppins;*/
+    font-weight: 500; /* This can be altogether*/
+    font-family: Poppins; /* This can be altogether*/
+    font-size: 1.6rem; /* This can be altogether*/
+    color: var(--color-text-base);
+}
+
+
+#container {
+
+   width: 90vw; /*break in 100 piece and fill 90% of it*/ 
+   max-width:700px;
+
+}
+
+
+@media (min-width: 700px) {
+
+    :root {
+        font-size: 62.5%; /* every 1 rem is relative to 10px - 1.6 rem  = 16px */
+                           /*If disply is more than 700px font-size is going to be 62.5%*/ 
+    }
+}
+
+
+
