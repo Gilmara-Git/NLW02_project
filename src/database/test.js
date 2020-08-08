@@ -54,7 +54,7 @@ Database.then(async(db) =>{
     
     `)
 
-    console.log(selectClassesAndProffys)
+    //.log(selectClassesAndProffys)
 
 
     //time that a proffy works from 08 - 18 h 
