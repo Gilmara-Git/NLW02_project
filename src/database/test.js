@@ -16,7 +16,7 @@ Database.then(async(db) =>{
 
      classValue = {
 
-        subject: "Química",
+        subject: 1,
         cost: "20",
        //proffy_id will be inserted by the database
 
