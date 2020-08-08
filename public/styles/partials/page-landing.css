@@ -110,12 +110,17 @@
 
 
 
-@media (max-width:699px) { /*Until 699px apply this font-size*/
+@media (max-width:1100) { /*Until 699px apply this font-size*/
 
     :root {
 
         font-size: 40%; /*We want to modify Fs (rem size) , so fonts will be smaller... better for mobile devices*/
     }
+
+    .hero-image {
+        height:45;
+    }
+
 }
 
 
