@@ -81,10 +81,67 @@ function pageTeach(req, res){
 
 }
 
+async function saveClasses (req, res) {
+    
+    const createProffy = require("./database/createProffy")
 
+    const proffyValue = {
+
+        name: req.body.name,
+        avatar: req.body.avatar,
+        wahtsapp: req.body.wahtsapp,
+        bio: req.body.bio
+
+    }
+    
+    const classValue = {
+        subject: req.body.subject,
+        cost: req.body.cost
+    }
+
+    const classScheduleValues = req.body.weekday.map((weekday, index) =>{ // map return the object in each array position
+
+            return { 
+
+                weekday,
+                time_from:convertHoursToMinutes(req.body.time_from[index]),
+                time_to: convertHoursToMinutes(req.body.time_to[index])
+            }
+
+    })
+
+        try { // try { } catch {} is a good practice when we have AWAIT
+
+        const db = await Database
+        await createProffy(db, {proffyValue, classValue, classScheduleValues} )
+
+        let queryString = "?subject=" + req.body.subject
+        queryString += "&weekday=" + req.body.weekday[0]
+        queryString += "&time=" + req.body.time_from[0]
+    
+        return res.redirect("/study" + queryString ) // This query string variable, teacher data saved (on page study)
+        
+        } catch (error){
+
+          console.log(error)
+        }
+
+    }
+
+
+
+
+function pageSuccess(req, res){    
+    
+       return res.render("success.html")
+      
+     
+}
 module.exports = {
 
     pageLanding,
     pageStudy,
-    pageTeach
+    pageTeach,
+    saveClasses,
+    pageSuccess
 }
