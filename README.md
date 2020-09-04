@@ -3,9 +3,9 @@
 
 <h1 align="center"><b>Next Level Week</b></h1>
 
-<h1 align="center">
+<h2 align="center">
     <img src="https://ik.imagekit.io/cnbmdh4b9w/2_-_NLW__02_-_1400x900_Aqodz7lQH.jpg">
-</h1>
+</h2>
 
 
 ## About
